@@ -12,4 +12,11 @@
             </meanbee_osd>
         </helpers>
     </global>
+    <default>
+        <meanbee_osd>
+            <general>
+                <enabled>0</enabled>
+            </general>
+        </meanbee_osd>
+    </default>
 </config>
