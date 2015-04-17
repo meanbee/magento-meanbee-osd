@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Meanbee_OSD>
+            <version>1.0.0</version>
+        </Meanbee_OSD>
+    </modules>
+    <global>
+        <helpers>
+            <meanbee_osd>
+                <class>Meanbee_OSD_Helper</class>
+            </meanbee_osd>
+        </helpers>
+    </global>
+</config>
