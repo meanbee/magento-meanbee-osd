@@ -19,6 +19,7 @@ class Meanbee_OSD_Helper_Config extends Mage_Core_Helper_Abstract
     const XML_PATH_SOCIAL_YOUTUBE    = "meanbee_osd/social/youtube";
     const XML_PATH_SOCIAL_LINKEDIN   = "meanbee_osd/social/linkedin";
     const XML_PATH_SOCIAL_MYSPACE    = "meanbee_osd/social/myspace";
+    const XML_PATH_SOCIAL_OTHER      = "meanbee_osd/social/other";
 
     const LOGO_UPLOAD_DIR = "osd/logo";
 
@@ -197,6 +198,42 @@ class Meanbee_OSD_Helper_Config extends Mage_Core_Helper_Abstract
     public function getMyspaceUrl($store = null)
     {
         return Mage::getStoreConfig(static::XML_PATH_SOCIAL_MYSPACE, $store);
+    }
+
+    /**
+     * Get the list of other social profile URLs from system configuration.
+     *
+     * @param Mage_Core_Model_Store|int|null $store
+     *
+     * @return array
+     */
+    public function getOtherSocialUrls($store = null)
+    {
+        $urls = unserialize(Mage::getStoreConfig(static::XML_PATH_SOCIAL_OTHER, $store));
+
+        return (is_array($urls)) ? $urls : array();
+    }
+
+    /**
+     * Get an organisation social profile URL by name form the list of
+     * other social profile URLs in system configuration.
+     *
+     * @param string                         $name
+     * @param Mage_Core_Model_Store|int|null $store
+     *
+     * @return string
+     */
+    public function getOtherSocialUrl($name, $store = null)
+    {
+        $urls = $this->getOtherSocialUrls($store);
+
+        foreach ($urls as $url) {
+            if ($url["name"] == $name) {
+                return $url["url"];
+            }
+        }
+
+        return "";
     }
 
 }

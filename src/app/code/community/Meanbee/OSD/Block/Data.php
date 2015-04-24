@@ -120,6 +120,10 @@ class Meanbee_OSD_Block_Data extends Mage_Core_Block_Abstract
             $this->getConfig()->getMyspaceUrl()
         );
 
+        foreach ($this->getConfig()->getOtherSocialUrls() as $url) {
+            $urls[] = $url["url"];
+        }
+
         $urls = array_values(array_filter($urls));
 
         return $urls;
