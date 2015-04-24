@@ -51,7 +51,7 @@ class Meanbee_OSD_Block_Data extends Mage_Core_Block_Abstract
     {
         $data = array(
             "@context" => "http://schema.org",
-            "@type"    => "Organisation",
+            "@type"    => "Organization",
             "url"      => $this->getConfig()->getOrganisationUrl()
         );
 
