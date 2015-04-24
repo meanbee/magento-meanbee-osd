@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout>
+    <cms_index_index>
+        <reference name="head">
+            <block type="meanbee_osd/data" name="meanbee.osd.data"/>
+        </reference>
+    </cms_index_index>
+</layout>

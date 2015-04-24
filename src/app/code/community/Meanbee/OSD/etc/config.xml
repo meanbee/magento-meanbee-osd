@@ -6,12 +6,26 @@
         </Meanbee_OSD>
     </modules>
     <global>
+        <blocks>
+            <meanbee_osd>
+                <class>Meanbee_OSD_Block</class>
+            </meanbee_osd>
+        </blocks>
         <helpers>
             <meanbee_osd>
                 <class>Meanbee_OSD_Helper</class>
             </meanbee_osd>
         </helpers>
     </global>
+    <frontend>
+        <layout>
+            <updates>
+                <meanbee_osd>
+                    <file>meanbee/osd.xml</file>
+                </meanbee_osd>
+            </updates>
+        </layout>
+    </frontend>
     <default>
         <meanbee_osd>
             <general>

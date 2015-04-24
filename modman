@@ -1,3 +1,5 @@
 # Meanbee_OSD
 src/app/etc/modules/Meanbee_OSD.xml    app/etc/modules/Meanbee_OSD.xml
 src/app/code/community/Meanbee/OSD     app/code/community/Meanbee/OSD
+
+src/app/design/frontend/base/default/layout/meanbee/osd.xml app/design/frontend/base/default/layout/meanbee/osd.xml
