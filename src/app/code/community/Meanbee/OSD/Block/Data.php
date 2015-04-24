@@ -59,6 +59,10 @@ class Meanbee_OSD_Block_Data extends Mage_Core_Block_Abstract
             $data["logo"] = $logo;
         }
 
+        if ($sameAs = $this->getAlternativeUrls()) {
+            $data["sameAs"] = $sameAs;
+        }
+
         if ($contacts = $this->getContactsList()) {
             $data["contactPoint"] = $contacts;
         }
@@ -96,6 +100,29 @@ class Meanbee_OSD_Block_Data extends Mage_Core_Block_Abstract
         }
 
         return $contacts;
+    }
+
+    /**
+     * Get a list of alternative URLs for the organisation.
+     *
+     * @return array
+     */
+    protected function getAlternativeUrls()
+    {
+        $urls = array(
+            $this->getConfig()->getFacebookUrl(),
+            $this->getConfig()->getTwitterUrl(),
+            $this->getConfig()->getGooglePlusUrl(),
+            $this->getConfig()->getInstagramUrl(),
+            $this->getConfig()->getPinterestUrl(),
+            $this->getConfig()->getYouTubeUrl(),
+            $this->getConfig()->getLinkedInUrl(),
+            $this->getConfig()->getMyspaceUrl()
+        );
+
+        $urls = array_values(array_filter($urls));
+
+        return $urls;
     }
 
     protected function _toHtml()
