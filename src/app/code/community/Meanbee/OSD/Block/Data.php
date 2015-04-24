@@ -59,11 +59,43 @@ class Meanbee_OSD_Block_Data extends Mage_Core_Block_Abstract
             $data["logo"] = $logo;
         }
 
+        if ($contacts = $this->getContactsList()) {
+            $data["contactPoint"] = $contacts;
+        }
+
         Mage::dispatchEvent("meanbee_osd_after_build_structured_data", array("data" => $data));
 
         $this->setStructuredData($data);
 
         return $this;
+    }
+
+    /**
+     * Get the structured data for organisation contacts.
+     *
+     * @return array
+     */
+    protected function getContactsList()
+    {
+        $contacts = array();
+
+        if ($customer_support = $this->getConfig()->getCustomerSupportContact()) {
+            $contacts[] = array(
+                "@type"       => "ContactPoint",
+                "contactType" => "customer support",
+                "telephone"   => $customer_support
+            );
+        }
+
+        if ($sales = $this->getConfig()->getSalesContact()) {
+            $contacts[] = array(
+                "@type"       => "ContactPoint",
+                "contactType" => "sales",
+                "telephone"   => $sales
+            );
+        }
+
+        return $contacts;
     }
 
     protected function _toHtml()

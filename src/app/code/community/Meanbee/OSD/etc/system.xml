@@ -57,6 +57,32 @@
                         </logo>
                     </fields>
                 </organisation>
+                <contacts translate="label comment">
+                    <label>Contact Information</label>
+                    <comment><![CDATA[All contact phone numbers must be in international format, starting with a "+" symbol and a country code.]]></comment>
+                    <sort_order>30</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <customer_support translate="label">
+                            <label>Customer Support Phone Number</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>10</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </customer_support>
+                        <sales translate="label">
+                            <label>Sales Phone Number</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>20</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </sales>
+                    </fields>
+                </contacts>
             </groups>
         </meanbee_osd>
     </sections>
