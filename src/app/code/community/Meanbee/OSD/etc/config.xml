@@ -10,6 +10,11 @@
             <meanbee_osd>
                 <class>Meanbee_OSD_Block</class>
             </meanbee_osd>
+            <page>
+                <rewrite>
+                    <html_breadcrumbs>Meanbee_OSD_Block_Html_Breadcrumbs</html_breadcrumbs>
+                </rewrite>
+            </page>
         </blocks>
         <helpers>
             <meanbee_osd>
@@ -30,6 +35,7 @@
         <meanbee_osd>
             <general>
                 <enabled>0</enabled>
+                <breadcrumbs_enabled>1</breadcrumbs_enabled>
             </general>
         </meanbee_osd>
     </default>

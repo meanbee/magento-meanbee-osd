@@ -1,5 +1,11 @@
 <?xml version="1.0"?>
 <layout>
+    <default>
+        <reference name="head">
+            <block type="meanbee_osd/breadcrumbs" name="meanbee.osd.breadcrumbs" />
+        </reference>
+    </default>
+
     <cms_index_index>
         <reference name="head">
             <block type="meanbee_osd/data" name="meanbee.osd.data"/>

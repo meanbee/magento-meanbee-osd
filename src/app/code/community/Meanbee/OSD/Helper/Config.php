@@ -4,6 +4,7 @@ class Meanbee_OSD_Helper_Config extends Mage_Core_Helper_Abstract
 {
 
     const XML_PATH_MODULE_ENABLED = "meanbee_osd/general/enabled";
+    const XML_PATH_MODULE_BREADCRUMBS_ENABLED = "meanbee_osd/general/breadcrumbs_enabled";
 
     const XML_PATH_ORGANISATION_URL  = "meanbee_osd/organisation/url";
     const XML_PATH_ORGANISATION_LOGO = "meanbee_osd/organisation/logo";
@@ -33,6 +34,18 @@ class Meanbee_OSD_Helper_Config extends Mage_Core_Helper_Abstract
     public function isEnabled($store = null)
     {
         return Mage::getStoreConfigFlag(static::XML_PATH_MODULE_ENABLED, $store);
+    }
+
+    /**
+     * Check if breadcrumbs are enabled in the organisational data output.
+     *
+     * @param Mage_Core_Model_Store|int|null $store
+     *
+     * @return bool
+     */
+    public function isBreadcrumbsEnabled($store = null)
+    {
+        return Mage::getStoreConfigFlag(static::XML_PATH_MODULE_BREADCRUMBS_ENABLED, $store);
     }
 
     /**
