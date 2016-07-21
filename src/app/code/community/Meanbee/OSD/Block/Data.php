@@ -132,7 +132,7 @@ class Meanbee_OSD_Block_Data extends Mage_Core_Block_Abstract
     protected function _toHtml()
     {
         if ($this->isEnabled() && $data = $this->getStructuredDataAsJson()) {
-            return sprintf('<script type="application/ld+json">%s</script>', $data);
+            return sprintf(Meanbee_OSD_Helper_Data::LD_JSON_TEMPLATE, $data);
         }
 
         return "";
